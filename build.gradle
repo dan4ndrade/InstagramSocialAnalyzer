@@ -31,6 +31,7 @@ dependencies {
     compile("org.json:json:20090211") // Json dependence
     compile("org.springframework.boot:spring-boot-devtools")
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+    compile group: 'org.brunocvcunha.instagram4j', name: 'instagram4j', version: '1.6'
     testCompile("junit:junit")
 }
 

@@ -1,7 +1,14 @@
 package hello.Controllers;
 
+import com.sun.deploy.net.HttpResponse;
 import hello.JsonReader;
 import hello.SSLFixer;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
@@ -10,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class AuthController extends JsonReader {
@@ -41,59 +50,6 @@ public class AuthController extends JsonReader {
     }
 
 
-    /*
-    public String accessTkn (String code) {
-
-        try {
-
-            HttpClient httpclient = HttpClients.createDefault();
-            HttpPost httppost = new HttpPost("https://api.instagram.com/oauth/access_token");
-
-            // Request parameters and other properties.
-            List<NameValuePair> params = new ArrayList<NameValuePair>(2);
-            params.add(new BasicNameValuePair("client_id", Constants.CLIENT_ID));
-            params.add(new BasicNameValuePair("client_secret", Constants.CLIENT_SECRET));
-            params.add(new BasicNameValuePair("grant_type", "authorization_code"));
-            params.add(new BasicNameValuePair("redirect_uri",  Constants.REDIRECT_URI_AUTH));
-            params.add(new BasicNameValuePair("code",  code));
-
-
-            httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
-
-            //Execute and get the response.
-            HttpResponse response = httpclient.execute(httppost);
-            HttpEntity entity = response.getEntity();
-            System.out.println("entity "+ entity.getContent());
-
-            if (entity != null) {
-                InputStream instream = entity.getContent();
-                try {
-
-                    return (getStringfromStream(instream));
-                    // do something useful
-                } finally {
-                    instream.close();
-                }
-            }
-        } catch (UnsupportedEncodingException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ClientProtocolException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (UnsupportedOperationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        return "Abhay";
-
-
-    }
-    */
 
 
 }
