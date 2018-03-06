@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>P&aacute;gina Principal | SMA</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css" />
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css" />
+
+    <!-- Custom stylesheet -->
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top">
+
+<!-- Script for the Facebook authentication button -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '168322137061011',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.10'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+
+</script>
+
+<!-- Top Navbar -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Social Media Analyzer | SMA</a>
+        </div>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#about">SMA<i class="fa fa-question text-primary" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#how">Metodologia</a>
+                </li>
+                <!--<li>
+                    <a class="page-scroll" href="#portfolio">Galeria</a>
+                </li>-->
+                <li>
+                    <a class="page-scroll" href="#aboutProject">Sobre o Projeto</a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#popUpWindow">Login <i class="fa fa-sign-in text-primary" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- Login Popup -->
+<div class="modal fade" id="popUpWindow">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+
+            <!-- header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Entre no SMA</h3>
+            </div>
+
+            <!-- body (form) -->
+            <div class="modal-body">
+                <!-- User and password form login -->
+                <form role="form" action="/auth" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Usuário" name="username"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Senha" name="password"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" value="Submit">Login</button>
+                </form>
+                <br/>
+                <h2 class="text-divider"><span>OU</span></h2>
+                <br/>
+                <!-- Facebook button form login -->
+                <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with"
+                     data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" data-width="400"
+                     data-scope="manage_pages,publish_actions,publish_pages,read_insights" onlogin="document.loginFormFacebook.submit()"></div>
+
+                <form action="/connect/facebook" method="POST" name="loginFormFacebook">
+                    <input type="hidden" name="scope" value="manage_pages,publish_actions,publish_pages,read_insights" />
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <br />
+            <h1><br /><br />Social Media Analyzer</h1>
+            <hr>
+            <p><br />O SMA &eacute; uma ferramenta capaz de analisar os dados de suas páginas e se comunicar com o Facebook</p>
+            <a href="#about" class="btn btn-primary btn-xl page-scroll">Como o SMA pode me auxiliar?</a>
+        </div>
+    </div>
+</header>
+
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Quer engajar seu p&uacute;blico com conte&uacute;do interessante?</h2>
+                <hr class="light" />
+                <p class="text-faded">O SMA permite que voc&ecirc; detecte pontos de melhoria, tome decis&otilde;es rapidamente
+                    e administre sua p&aacute;gina do Facebook de maneira eficaz e inteligente, fortalecendo o elo entre voc&ecirc; e
+                    seus seguidores.</p><br/><br/>
+                <a href="#how" class="btn btn-default btn-xl page-scroll">Claro!! Mas como funciona?</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Resumindo em 4 passos</h2>
+                <hr class="primary" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-facebook-square wow bounceIn text-primary"></i>
+                    <h3>Conecte</h3>
+                    <p class="text-muted">Em poucos passos sua conta do Facebook é conectada e juntos faremos suas páginas bombarem! =D</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-bar-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                    <h3>Analise</h3>
+                    <p class="text-muted">A ferramenta apresenta an&aacute;lises enxutas, auxiliando no processo de tomada de decis&otilde;es</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-comments-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                    <h3>Engaje</h3>
+                    <p class="text-muted">Compartilhar conteúdos e manter interações com seus seguidores se tornará algo super simples</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-line-chart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                    <h3>Impulsione</h3>
+                    <p class="text-muted">Fortale&ccedil;a o relacionamento com os seus seguidores e garanta mais visibilidade em suas páginas</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <br /><br /><br /><br />
+                <a href="#" data-toggle="modal" data-target="#popUpWindow" class="btn btn-primary btn-xl">Quero melhorar minhas p&aacute;ginas!</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+<section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-lg-4 col-sm-6">
+                <div class="portfolio-box">
+                    <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Img 1
+                            </div>
+                            <div class="project-name">
+                                Texto 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="portfolio-box">
+                    <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Img 2
+                            </div>
+                            <div class="project-name">
+                                Texto 2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="portfolio-box">
+                    <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Img 3
+                            </div>
+                            <div class="project-name">
+                                Texto 3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="portfolio-box">
+                    <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Img 4
+                            </div>
+                            <div class="project-name">
+                                Texto 4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<aside class="bg-dark">
+    <div class="container text-center">
+        <div class="call-to-action">
+            <h2>Seriously, It's This Fucking Template !</h2>
+            <a href="#" class="btn btn-default btn-xl wow tada">That's Amazing!</a>
+        </div>
+    </div>
+</aside>
+-->
+
+<section class="bg-dark" id="aboutProject">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Sobre o Projeto</h2>
+                <hr class="primary" />
+                <p>O projeto SMA foi desenvolvido em 2017 como trabalho de conclus&atilde;o de curso pelos alunos
+                    <a href="https://www.linkedin.com/in/danilohenriquemmandrade/">Danilo Andrade</a>,
+                    <a href="https://www.linkedin.com/in/fmtada/">Fl&aacute;vio Tada</a>,
+                    <a href="https://www.linkedin.com/in/hugo-goes-631b76b7/">Hugo Goes</a> e
+                    <a href="https://www.linkedin.com/in/lucas-carvalho-81755ba5/">Lucas Carvalho</a>
+                    do curso de Sistemas de Informa&ccedil;&atilde;o da Faculdade de Ci&ecirc;ncias Exatas e Tecnologia da PUC-SP.</p>
+                <p></p>
+            </div>
+            <!--
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                <p>+1-666-420-6969</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p><a href="mailto:e@mail.com">e@mail.com</a></p>
+            </div>
+            -->
+        </div>
+    </div>
+</section>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+<!-- Modal shifting to the right fix -->
+<script src="js/modalFix.js"></script>
+</body>
+
+</html>

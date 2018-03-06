@@ -1,0 +1,142 @@
+/*
+* Custom stylesheet
+*
+ */
+
+body {
+    font-family: 'Circular Book', sans-serif;
+}
+
+samp {
+    font-family: 'Circular Book', sans-serif;
+}
+
+.tooltip {
+    font-family: 'Circular Book', sans-serif;
+}
+
+.popover {
+    font-family: 'Circular Book', sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td-name, td {
+    font-family: 'Circular Book', sans-serif;
+}
+
+@font-face {
+    font-family: 'Circular Book';
+    src: url('../fonts/Circular/CircularStd-Book.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Circular/CircularStd-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Circular/CircularStd-Book.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Circular/CircularStd-Book.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Circular/CircularStd-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Circular/CircularStd-Book.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Circular Book';
+    font-style: italic;
+    src: url('../fonts/Circular/CircularStd-BookItalic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Circular/CircularStd-BookItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Circular/CircularStd-BookItalic.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Circular/CircularStd-BookItalic.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Circular/CircularStd-BookItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Circular/CircularStd-BookItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Circular Medium';
+    src: url('../fonts/Circular/CircularStd-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Circular/CircularStd-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Circular/CircularStd-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Circular/CircularStd-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Circular/CircularStd-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Circular/CircularStd-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Circular Medium';
+    font-style: italic;
+    src: url('../fonts/Circular/CircularStd-MediumItalic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Circular/CircularStd-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Circular/CircularStd-MediumItalic.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Circular/CircularStd-MediumItalic.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Circular/CircularStd-MediumItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Circular/CircularStd-MediumItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Circular Bold';
+    src: url('../fonts/Circular/CircularStd-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Circular/CircularStd-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Circular/CircularStd-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Circular/CircularStd-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Circular/CircularStd-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Circular/CircularStd-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Circular Bold';
+    font-style: italic;
+    src: url('../fonts/Circular/CircularStd-BoldItalic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Circular/CircularStd-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Circular/CircularStd-BoldItalic.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Circular/CircularStd-BoldItalic.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Circular/CircularStd-BoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Circular/CircularStd-BoldItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Circular Black';
+    src: url('../fonts/Circular/CircularStd-Black.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Circular/CircularStd-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Circular/CircularStd-Black.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Circular/CircularStd-Black.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Circular/CircularStd-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Circular/CircularStd-Black.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Circular Black';
+    font-style: italic;
+    src: url('../fonts/Circular/CircularStd-BlackItalic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Circular/CircularStd-BlackItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Circular/CircularStd-BlackItalic.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Circular/CircularStd-BlackItalic.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Circular/CircularStd-BlackItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Circular/CircularStd-BlackItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#loading-img {
+    /*background: url(https://i.imgur.com/oqnfwbC.gif) center center no-repeat;*/
+    /*background: url(http://i.imgur.com/ipom2Nn.gif) center center no-repeat;*/
+    background: url('/img/loading.gif') center center no-repeat;
+    height: 100%;
+    z-index: 7;
+}
+
+.loading-text {
+    font-size: x-large;
+    height: 92%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.loading-overlay {
+    background: #000000;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.95;
+    z-index: 6;
+}
