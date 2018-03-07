@@ -26,9 +26,9 @@ public class PageController extends UserController {
             e.printStackTrace();
         }
 
-        model.addAttribute("instagram", userResult.getUser());
+        model.addAttribute("user", userResult.getUser());
 
-        return "page";
+        return "page/page";
 
     }
 

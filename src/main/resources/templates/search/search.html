@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ptbr">
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png" />
@@ -159,25 +159,12 @@
                                         <div id="collapseOne" class="panel-collapse collapse">
                                             <div class="panel-body">
                                                 <p class="category">Área reservada para criar uma nova publicação</p>
-                                                <form action="/management=publication" method="POST">
-                                                            <textarea cols="60" rows="5" name="postmessage" maxlength="500" wrap="hard"
-                                                                      placeholder="O que você está pensando?"></textarea>
-                                                    <br />
-                                                    <!--
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                            <span class="selection">Público</span><span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu" id="post_type" role="menu">
-                                                            <li><a href="#">Público</a></li>
-                                                            <li><a href="#">Privado</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    -->
-                                                    <p class="category" th:text="${resultpost}"/>
-                                                    <br/><button type="submit" class="btn btn-inverse">Publicar</button>
-                                                    Agendar <input type='text' name="postdatetime" placeholder="DD/MM/YYYY HH:MM" />
-                                                </form>
+                                                <textarea cols="60" rows="5" name="postmessage" maxlength="500" wrap="hard"
+                                                      placeholder="O que você está pensando?"></textarea>
+                                                <br />
+                                                <p class="category" th:text="${resultpost}"/>
+                                                <br/><button class="btn btn-inverse">Publicar</button>
+                                                Agendar <input type='text' name="postdatetime" placeholder="DD/MM/YYYY HH:MM" />
                                             </div>
                                         </div>
                                     </div>
@@ -189,47 +176,19 @@
                                         </div>
                                         <div id="collapseTwo" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                                <p class="category">Qual usuário deseja vasculhar?</p>
-                                                <textarea cols="40" rows="1" name="username" maxlength="30" wrap="hard"
-                                                          placeholder=""></textarea>
-                                                <p class="category" th:text="${resultpost}"/>
+                                                <table>
+                                                    <tr>
+                                                        <td width="260px">
+                                                            <p class="category">Qual usuário deseja vasculhar?</p>
+                                                            <input type="text" size="30" name="username" maxlength="30" wrap="hard" />
+                                                        </td>
+                                                        <td>
+                                                            <button id="btnUserSearch" class="btn btn-inverse">Procurar</button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                                 <br/>
-                                                <button id="btnUserSearch" class="btn btn-inverse">Procurar</button>
-                                                <script type="text/javascript">
-
-                                                    $(document).ready(function() {
-                                                        function searchUser() {
-                                                            var username = $("textarea[name='username']")[0].value;
-                                                            $.ajax({
-                                                                type: 'POST',
-                                                                url: '/search=user',
-                                                                data: 'username='+username,
-                                                            })
-                                                                .done(function(data) {
-                                                                    console.log("success");
-                                                                    console.log(data)
-                                                                    $("div[id='divUserResult']")[0].append(document.createElement('hr'));
-                                                                    $("div[id='divUserResult']")[0].append(JSON.stringify(data));
-                                                                })
-                                                                .fail(function() {
-                                                                    console.log("Error when access data user with ajax.");
-                                                                });
-                                                        }
-                                                        $("button[id='btnUserSearch']")[0].addEventListener("click", searchUser);
-                                                    });
-                                                </script>
-
-                                                <br/><br/>
-
-                                                <div id="divUserResult">
-                                                </div>
-
-                                                <div th:each="result:${feed}">
-                                                    <b th:text="${result.full_name}">from</b> escreveu:
-                                                    <p th:text="${result.biography}">message text</p>
-                                                    <img th:if="${result.profile_pic_url}" th:src="${result.profile_pic_url}"/>
-                                                    <hr/>
-                                                </div>
+                                                <div id="divUserResult"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -283,5 +242,27 @@
 <!-- END Change FB page Popup -->
 
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        function searchUser() {
+            var username = $("input[name='username']")[0].value;
+            $.ajax({
+                type: 'POST',
+                url: '/search=user',
+                data: 'username='+username,
+            })
+                .done(function(data) {
+                    console.log("success");
+                    console.log(data)
+                    $("div[id='divUserResult']").html( data );
+                })
+                .fail(function() {
+                    console.log("Error when access data user with ajax.");
+                });
+        }
+        $("button[id='btnUserSearch']")[0].addEventListener("click", searchUser);
+    });
+</script>
 
 </html>

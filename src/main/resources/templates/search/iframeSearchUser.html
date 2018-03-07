@@ -1,0 +1,85 @@
+<hr/>
+<!-- Main content -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="img/background.jpg" alt="..." />
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            <img class="avatar border-white" th:src="${user.profile_pic_url}" alt="..."/>
+                            <h4 class="title" th:text="${user.full_name}"></h4>
+                            <a th:href="${user.username != null} ? 'https://instagram.com/' + ${user.username}" target="_blank" th:text="${user.username != null} ? '@' + ${user.username}"><small></small></a>
+                        </div>
+                        <p class="description text-center" th:text="${user.biography}">
+
+                        </p>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-7">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Informações</h4>
+                    </div>
+                    <div class="content">
+                        <form>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Seguidores</label>
+                                        <input type="text" class="form-control border-input" placeholder="0" th:value="${user.follower_count}"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Seguindo</label>
+                                        <input type="text" class="form-control border-input" placeholder="0" th:value="${user.following_count}"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text" class="form-control border-input" placeholder="0" th:value="${user.follower_count}"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text" class="form-control border-input" placeholder="0" th:value="${user.following_count}"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Site</label>
+                                        <input type="text" class="form-control border-input" placeholder="" th:value="${user.external_url}"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">E-mail</label>
+                                        <input type="email" class="form-control border-input" placeholder="" th:value="${user.public_email}"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Main content -->

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ptbr">
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png" />
@@ -142,11 +142,11 @@
                             </div>
                             <div class="content">
                                 <div class="author">
-                                    <img class="avatar border-white" th:src="${instagram.profile_pic_url}" alt="..."/>
-                                    <h4 class="title" th:text="${instagram.full_name}"></h4>
-                                    <a th:href="${instagram.username != null} ? 'https://instagram.com/' + ${instagram.username}" target="_blank" th:text="${instagram.username != null} ? '@' + ${instagram.username}"><small></small></a>
+                                    <img class="avatar border-white" th:src="${user.profile_pic_url}" alt="..."/>
+                                    <h4 class="title" th:text="${user.full_name}"></h4>
+                                    <a th:href="${user.username != null} ? 'https://user.com/' + ${user.username}" target="_blank" th:text="${user.username != null} ? '@' + ${user.username}"><small></small></a>
                                 </div>
-                                <p class="description text-center" th:text="${instagram.biography}">
+                                <p class="description text-center" th:text="${user.biography}">
 
                                 </p>
                             </div>
@@ -165,13 +165,13 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Seguidores</label>
-                                                <input type="text" class="form-control border-input" placeholder="0" th:value="${instagram.follower_count}"/>
+                                                <input type="text" class="form-control border-input" placeholder="0" th:value="${user.follower_count}"/>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Seguindo</label>
-                                                <input type="text" class="form-control border-input" placeholder="0" th:value="${instagram.following_count}"/>
+                                                <input type="text" class="form-control border-input" placeholder="0" th:value="${user.following_count}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -180,13 +180,13 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label></label>
-                                                <input type="text" class="form-control border-input" placeholder="0" th:value="${instagram.follower_count}"/>
+                                                <input type="text" class="form-control border-input" placeholder="0" th:value="${user.follower_count}"/>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label></label>
-                                                <input type="text" class="form-control border-input" placeholder="0" th:value="${instagram.following_count}"/>
+                                                <input type="text" class="form-control border-input" placeholder="0" th:value="${user.following_count}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -195,13 +195,13 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Site</label>
-                                                <input type="text" class="form-control border-input" placeholder="" th:value="${instagram.external_url}"/>
+                                                <input type="text" class="form-control border-input" placeholder="" th:value="${user.external_url}"/>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">E-mail</label>
-                                                <input type="email" class="form-control border-input" placeholder="" th:value="${instagram.public_email}"/>
+                                                <input type="email" class="form-control border-input" placeholder="" th:value="${user.public_email}"/>
                                             </div>
                                         </div>
                                     </div>

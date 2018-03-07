@@ -5,10 +5,10 @@ import org.brunocvcunha.instagram4j.Instagram4j;
 import org.brunocvcunha.instagram4j.requests.InstagramSearchUsernameRequest;
 import org.brunocvcunha.instagram4j.requests.payload.InstagramSearchUsernameResult;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 
@@ -18,14 +18,12 @@ public class SearchController extends UserController {
     @RequestMapping("/search")
     public String search(){
 
-        return "search";
+        return "search/search";
 
     }
 
-    @RequestMapping(value = "/search=user", method = RequestMethod.POST)
-    public @ResponseBody InstagramSearchUsernameResult searchUser(@ModelAttribute("username") String username) {
-
-        System.out.println("User: " + username);
+    @RequestMapping("/search=user")
+    public ModelAndView searchUser(@ModelAttribute("username") String username, Model model) {
 
         Instagram4j instagram = getInstagram();
         InstagramSearchUsernameResult userResult = null;
@@ -36,7 +34,9 @@ public class SearchController extends UserController {
             e.printStackTrace();
         }
 
-        return userResult;
+        model.addAttribute("user", userResult.getUser());
+
+        return new ModelAndView( "search/iframeSearchUser" );
 
     }
 

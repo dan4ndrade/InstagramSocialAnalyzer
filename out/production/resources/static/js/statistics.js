@@ -12,7 +12,7 @@ function barChart1() {
         data: {
             labels: ["Último dia", "Última semana", "Últimos 28 dias"],
             datasets: [{
-                label: '# of Votes',
+                label: '# de acessos',
                 data: [4, 12, 32],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
